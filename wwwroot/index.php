@@ -1,0 +1,15 @@
+<?php
+require('../../spartan/Spartan.php');
+Spt::start(
+    Array(
+        'APP_NAME'=>'Www',//项目目录名称
+		'APP_ROOT'=>dirname(__DIR__).DIRECTORY_SEPARATOR.'application',//项目根目录
+        'HOST'=>'',//主机名
+        'DOMAIN'=>'',//域名
+        'DEBUG'=>true,//调试模式
+        'LANG'=>'zh-cn',//语言包
+        'TIME_ZONE'=>'PRC',//时区
+        'SERVER'=>false,//服务模式
+        'MAIN_FUN'=>'runMain',//服务模式的入口函数
+    )
+);
