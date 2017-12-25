@@ -2,5 +2,3 @@
 composer.lock
 *.log
 *.cache
-/application/Www/Runtime/Cache
-/application/Www/Runtime/Log
