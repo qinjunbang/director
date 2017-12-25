@@ -7,8 +7,8 @@ use Spartan\Core\Controller;
 class IndexController extends Controller {
 
     public function index(){
-        $objCls = $this->Db()->find('test');
-
+        $arrList = $this->Db()->select('member_auth');
+        print_r($arrList);
         $this->display();
     }
 
