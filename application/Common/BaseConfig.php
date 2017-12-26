@@ -10,16 +10,17 @@ return Array(
         'DESCRIPTION'=>'spartan是一个轻量级的PHP框架，非常非常地轻；部署非常常方便。',
     ),
     'DB'=>Array(//数据库设置
-        'TYPE'=>'mysqli',
-        'HOST'=>'120.78.80.218',
-        'NAME'=>'syt_pay',
-        'USER'=>'syt_pay',
-        'PWD'=>'syt_pay',
-        'PORT'=>'3306',
-        'PREFIX'=>'j_',
-        'CHARSET'=>'utf8',
+        'TYPE'=>'mysqli',//数据库类型
+        'HOST'=>'120.78.80.218',//服务器地址
+        'NAME'=>'syt_pay',//数据库名
+        'USER'=>'syt_pay',//用户名
+        'PWD'=>'syt_pay',//密码
+        'PORT'=>'3306',//端口
+        'PREFIX'=>'j_',//数据库表前缀
+        'CHARSET'=>'utf8',//数据库编码默认采用utf8
     ),
     'SESSION_HANDLER'=>Array(//Session服务器，如果启用，可以共享session
+        'OPEN'=>false,
         'NAME'=>'redis',
         'PATH'=>'tcp://120.78.80.218:63798?auth=foobaredf23fdafasflxvxz.vaf;jdsafi2pqfjaf;;dsafj;sajfsapfisapjf',
     ),
