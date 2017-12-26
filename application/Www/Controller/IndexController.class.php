@@ -12,4 +12,9 @@ class IndexController extends Controller {
         $this->display();
     }
 
+    public function select(){
+        $arrList = $this->Db()->select('member_auth');
+        print_r($arrList);
+        $this->json();
+    }
 }
