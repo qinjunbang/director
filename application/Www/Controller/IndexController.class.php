@@ -13,8 +13,11 @@ class IndexController extends Controller {
     }
 
     public function select(){
-        $arrList = $this->Db()->select('member_auth');
+        $options = Array(
+
+        );
+        $arrList = $this->Dal()->find('web_activity',$options);
         print_r($arrList);
-        $this->json();
+        print_r($this->Dal()->Db()->getLastSql());
     }
 }
