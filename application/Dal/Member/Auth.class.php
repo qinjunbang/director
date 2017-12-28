@@ -5,6 +5,8 @@ class Auth
 {
     //表名
 	public $strTable = 'member_auth';
+    //表备注
+    public $strComment = '活动表';
 	//别名
 	public $strAlias = 'a';
 	//唯一主键 = ['主键名',主键值]

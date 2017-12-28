@@ -5,6 +5,8 @@ class Activity
 {
     //表名
 	public $strTable = 'web_activity';
+    //表备注
+    public $strComment = '活动表';
 	//别名
 	public $strAlias = 'a';
 	//唯一主键
