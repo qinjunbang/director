@@ -19,6 +19,16 @@ class IndexController extends Controller {
         //$this->display();
     }
 
+    public function update(){
+        $arrData = Array(
+
+
+
+        );
+
+        $result = $this->Dal()->update('web_activity',$arrData);
+    }
+
     public function select(){
         $options = Array(
             'where'=>Array(
