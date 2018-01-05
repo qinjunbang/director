@@ -20,9 +20,7 @@ class IndexController extends Controller {
     }
 
     public function update(){
-        $arrData = Array(
-
-
+        $result = $this->Validation()->authorize(
 
         );
 
