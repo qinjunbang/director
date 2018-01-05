@@ -30,9 +30,9 @@ class Activity
     public $arrRequired = Array(
         'name'=>Array('required','length',Array(2,10),'请输入名称'),
         'content'=>Array('required','length',Array(2,100),'请输入活动内容'),
-        'begin_time'=>Array('nullable','date',Array(2,100),'请输入活动内容'),
-        'end_time'=>Array('nullable','date',Array(2,100),'请输入活动内容'),
-        'add_time'=>Array('nullable','date',Array(2,100),'请输入活动内容'),
+        'begin_time'=>Array('null','date',Array(2,100),'请输入活动内容'),
+        'end_time'=>Array('null','date',Array(2,100),'请输入活动内容'),
+        'add_time'=>Array('null','date',Array(2,100),'请输入活动内容'),
     );
 
     /**

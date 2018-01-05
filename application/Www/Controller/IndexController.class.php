@@ -21,7 +21,9 @@ class IndexController extends Controller {
 
     public function update(){
         $result = $this->Validation()->authorize(
-
+            Array(
+                ''
+            )
         );
 
         $result = $this->Dal()->update('web_activity',$arrData);
