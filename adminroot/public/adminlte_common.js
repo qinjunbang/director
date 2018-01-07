@@ -8,9 +8,5 @@ document.write('<link rel="stylesheet" href="'+path+'cache/fonts.googleapis.com.
 document.write('<script src="'+path+'bower_components/jquery/dist/jquery.min.js" type="text/javascript"></sc'+'ript>');
 document.write('<script src="'+path+'bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></sc'+'ript>');
 document.write('<script src="'+path+'plugins/iCheck/icheck.min.js" type="text/javascript"></sc'+'ript>');
-
-function showCode(img){
-    if(!img){img='vcode';}
-    if(!$('#'+img)){return;}
-    $('#'+img).attr('src','/index/code?'+Math.random());
-}
+/////////////////////////////主要公共函数///////////////////////
+document.write('<script src="/public/common.js" type="text/javascript"></sc'+'ript>');

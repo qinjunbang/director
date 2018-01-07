@@ -6,11 +6,9 @@ use Spartan\Core\Controller;
 /**
  * @description
  * @author singer
- * @date 15-4-2 下午2:27
  */
 abstract class Control extends Controller {
 	protected $adminInfo = null;
-	//protected $rpcClient = null;
 
 	public function __construct(){
 		parent::__construct();
@@ -31,8 +29,12 @@ abstract class Control extends Controller {
     private function whiteList(){
 	    $arrUrl = Array(
 	        'index/login',
+	        'index/login/save',
 	        'index/code',
-            'index/editpass'
+            'index/reg',
+            'index/pass',
+            'index/lost',
+            'index/lock',
         );
         return in_array(strtolower(__URL__),$arrUrl);
     }

@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>系统管理后台 - {$Spt.CONFIG.SITE.NAME}</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <script src="/public/AdminLTE-2.4.2/common.js"></script>
+    <script src="/public/adminlte_common.js"></script>
     <!--[if lt IE 9]>
-    <script src="/public/AdminLTE-2.4.2/common_ie9.js"></script>
+    <script src="/public/adminlte_common.js"></script>
     <![endif]-->
 </head>
 <body class="hold-transition login-page">
@@ -16,40 +16,52 @@
             <b>Admin</b>LTE
         </div>
         <div class="login-box-body">
-            <p class="login-box-msg"></p>
-            <form>
+            <p class="login-box-msg">登录系统</p>
+            <form id="frmLogin">
                 <div class="form-group has-feedback">
-                    <input type="text" class="form-control" placeholder="登录名称">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <input id="user_name" name="user_name" type="text" class="form-control" placeholder="登录名称" />
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="登录密码">
+                    <input id="pass_word" name="pass_word" type="password" class="form-control" placeholder="登录密码" />
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
                     <div class="col-xs-8">
-                        <input type="password" class="form-control" placeholder="验证码">
+                        <input id="code" name="code" type="text" class="form-control" placeholder="验证码" />
+                        <span class="glyphicon glyphicon-hand-right form-control-feedback" style="right: 16px;"></span>
                     </div>
                     <div class="col-xs-4">
-                        <img align="absmiddle" id="vcode" onclick="showCode('vcode');" style="width:60px;height:28px;cursor:pointer;" />
+                        <img align="absmiddle" id="vcode" onclick="showCode('vcode');" style="margin-top:2px;width:60px;height:28px;cursor:pointer;" />
                         <script language="JavaScript">showCode('vcode');</script>
                     </div>
                 </div>
                 <p class="login-box-msg"></p>
                 <div class="row">
                     <div class="col-xs-4">
-                        <button type="button" class="btn btn-primary btn-block btn-flat">登录</button>
+                        <a type="button" onclick="postLogin(this);" class="btn btn-primary btn-block btn-flat">登录</a>
                     </div>
-                    <div class="col-xs-4">
-                        <button type="button" class="btn btn-primary btn-block btn-flat">注册</button>
-                    </div>
-                    <div class="col-xs-4">
-                        <button type="button" class="btn btn-primary btn-block btn-flat">忘记密码</button>
+                    <div class="col-xs-8">
+                        <div class="checkbox" style="text-align: center;">
+                            <a href="/index/reg.html">注册账号</a>
+                            <a href="/index/lost.html" style="margin-left: 40px;">忘记密码</a>
+                        </div>
                     </div>
                 </div>
             </form>
             <p class="login-box-msg"></p>
         </div>
     </div>
+<script language="JavaScript">
+    function postLogin(btn) {
+        saveForm('/index/login/save','frmLogin',function (json) {
+            if (json.status == 1){
+                window.location.href = '/';
+            }else{
+                alert(json.info);
+            }
+        });
+    }
+</script>
 </body>
 </html>

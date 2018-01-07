@@ -4,8 +4,8 @@ Spt::start(
     Array(
         'APP_NAME'=>'Admin',//项目目录名称
 		'APP_ROOT'=>dirname(__DIR__).DIRECTORY_SEPARATOR.'application',//项目根目录
-        'HOST'=>'',//主机名
-        'DOMAIN'=>'',//域名
+        'HOST'=>'admin.director.com',//主机名
+        'DOMAIN'=>'director.com',//域名
         'DEBUG'=>true,//调试模式
         'LANG'=>'zh-cn',//语言包
         'TIME_ZONE'=>'PRC',//时区

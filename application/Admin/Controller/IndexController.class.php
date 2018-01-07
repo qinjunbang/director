@@ -15,21 +15,23 @@ class IndexController extends Control {
     }
 
     /**
-     * 登录操作
+     * 登录界面和登录操作
      */
     public function login(){
-        session("admin_edit",null);
-        session("admin_info",null);
         if($this->getUrl(2,'default') != "save"){
             $this->display('login');die();
         }
-        !checkVerifyCode(I('post.code')) && $this->ajaxMessage('错误的验证码，请输入正确的验证码。');
+        //如果是提交登录
         $arrData = Array(
-            'user_name' => [I('post.user_name'),'length','请输入正确的用户名。',2,32],
-            'user_pass' => [I('post.pass_word'),'length','请输入正确的密码。',6,32],
-        );
-        !Validate::instance($arrData) && $this->error($arrData['info']);
-        $arrResult = postData('/Admin/AdminAuth/login',$arrData);
+            'user_name'=>Array('required','length',[2,32],'请输入正确的用户名。'),
+            'pass_word'=>Array('required','length',[6,32],'请输入正确的密码。'),
+            'code'=>Array('required','same',['$session.verifyCode'],'错误的验证码，请输入正确的验证码。'),
+       );
+        list($arrData,$arrResult) = $this->valid($arrData)->result();
+        if ($arrResult['status'] != 1){
+            $this->ajaxReturn($arrResult);
+        }
+        $arrResult = $this->logic()->User('/Admin/Users/login',$arrData);
         $arrInfo = isset($arrResult['data'])?$arrResult['data']:[];
         if ($arrResult['status'] == 1 && isset($arrInfo['id'])){
             if ($arrInfo['status'] != 1){
@@ -45,6 +47,19 @@ class IndexController extends Control {
             $this->ajaxReturn($arrResult);
         }
     }
+
+    public function reg(){
+        if($this->getUrl(2,'default') != "save"){
+            $this->display('reg');die();
+        }
+    }
+
+    public function lost(){
+        if($this->getUrl(2,'default') != "save"){
+            $this->display('lost');die();
+        }
+    }
+
     /**
      * 显示验证码。
      */
