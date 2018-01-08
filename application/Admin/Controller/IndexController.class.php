@@ -13,7 +13,9 @@ class IndexController extends Control {
         $this->assign('info',$this->adminInfo);
         $this->display('index');
     }
-
+    public function table(){
+        $this->display('table');
+    }
     /**
      * 登录界面和登录操作
      */
@@ -108,5 +110,6 @@ class IndexController extends Control {
         }
         $this->ajaxReturn($arrInfo);
     }
+
 
 }

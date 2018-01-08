@@ -5,6 +5,7 @@ document.write('<link rel="stylesheet" href="'+path+'bower_components/Ionicons/c
 document.write('<link rel="stylesheet" href="'+path+'dist/css/AdminLTE.min.css">');
 document.write('<link rel="stylesheet" href="'+path+'plugins/iCheck/square/blue.css">');
 document.write('<link rel="stylesheet" href="'+path+'cache/fonts.googleapis.com.css">');
+document.write('<link rel="stylesheet" href="'+path+'dist/css/skins/_all-skins.min.css">');
 document.write('<script src="'+path+'bower_components/jquery/dist/jquery.min.js" type="text/javascript"></sc'+'ript>');
 document.write('<script src="'+path+'bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></sc'+'ript>');
 document.write('<script src="'+path+'plugins/iCheck/icheck.min.js" type="text/javascript"></sc'+'ript>');

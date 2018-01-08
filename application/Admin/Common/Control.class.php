@@ -19,9 +19,9 @@ abstract class Control extends Controller {
         $this->adminInfo = session('?admin_info')?session('admin_info'):['id'=>0,'user_name'=>'noLogin'];
         if ($this->adminInfo['id'] < 1 && !$this->whiteList()){
             if (isAjax()){
-                $this->ajaxReturn(['info'=>'Please Sign In.','status'=>0]);
+                //$this->ajaxReturn(['info'=>'Please Sign In.','status'=>0]);
             }else{
-                redirect('/index/login');die();
+                //redirect('/index/login');die();
             }
         }
     }
