@@ -33,7 +33,9 @@ class IndexController extends Control {
         if ($arrResult['status'] != 1){
             $this->ajaxReturn($arrResult);
         }
-        $arrResult = $this->logic()->User('/Admin/Users/login',$arrData);
+        $arrAdminInfo = $this->dal('admin_users',$arrData)->find();
+
+        $arrResult = $this->logic('admin_users',$arrData)->login();
         $arrInfo = isset($arrResult['data'])?$arrResult['data']:[];
         if ($arrResult['status'] == 1 && isset($arrInfo['id'])){
             if ($arrInfo['status'] != 1){
